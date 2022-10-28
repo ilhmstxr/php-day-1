@@ -101,6 +101,7 @@ Route::get('master_project/{id_siswa}/hapus', [ProjectController::class, 'hapus'
 // Route::get('jenis_kontak/hapus', [JContactController::class, 'hapus'])->name('jenis_kontak.hapus');
 Route::get('master_contact/create/{id_siswa}', [ContactController::class, 'tambah'])->name('master_contact.tambah');
 
+Route::get('jenis_kontak/{id_siswa}/tambah',[JContactController::class,'tambah'])->name('jenis_kontak.tambah');
 Route::get('jenis_kontak/{id_siswa}/hapus', [JContactController::class, 'hapus'])->name('jenis_kontak.hapus');
 
 Route::post('logout', [Logincontroller::class, 'logout']);

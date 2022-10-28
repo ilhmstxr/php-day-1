@@ -16,6 +16,6 @@
 
         public function siswa()
         {
-            return $this->belongsToMany('App\Models\kontak', 'id');
+            return $this->belongsTo('App\Models\siswa', 'id');
         }
     }

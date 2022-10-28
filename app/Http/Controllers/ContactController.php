@@ -148,4 +148,5 @@ class ContactController extends Controller
         Session::flash('danger', 'Data Berhasil Dihapus');
         return redirect('/mastercontact');
     }
+
 }

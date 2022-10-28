@@ -1,11 +1,10 @@
 @extends('master.admin')
 @section('title', 'Jenis Kontak')
-@section('content-title', 'Edit jenis Kontak ')
 @section('content')
 
     <div class="card shadow mb-4">
         <div class="card-body">
-            <form action="{{ route('jenis_kontak.store') }}" method="POST">
+            <form method="POST" action="{{ route('jenis_kontak.store') }}" >
                 @csrf
                 <div class="form-group">
                     <label for="nama">JENIS KONTAK</label>
