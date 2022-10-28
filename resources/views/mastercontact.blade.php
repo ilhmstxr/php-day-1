@@ -7,7 +7,7 @@
     <div class="row">
 
         {{-- jenis kontak --}}
-        <div class="col-lg-12 pb-4">
+        {{-- <div class="col-lg-12 pb-4">
             <div class="card shadow">
                 <div class="card shadow mb-4">
                     <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal"
@@ -40,94 +40,99 @@
                         </div>
                     </div>
                 </div>
-            {{-- </div> --}}
-        {{-- </div> --}}
-        {{-- <div class="card-header py-3 bg-danger">
-                        <a href="{{ route('jenis_kontak.create') }}" class="btn btn-success ">Tambah Kontak</a>
-                    </div> --}}
-        <div class="card-body">
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th scope="col">ID</th>
-                        <th scope="col">JENIS KONTAK</th>
-                        <th scope="col">ACTION</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach ($data as $item)
-                        <tr>
-                            <td>{{ $item->id }}</td>
-                            <td>{{ $item->jenis_kontak }}</td>
-                            <td>
-                                <a href="{{ route('jenis_kontak.edit', $item->id) }}"
-                                    class="btn btn-warning btn-circle btn-sm"><i class="fas fa-edit"></i></a>
-                                <a href="{{ route('jenis_kontak.hapus', $item->id) }}"
-                                    class="btn btn-danger btn-circle btn-sm"><i class="fas fa-trash"></i></a>
-                            </td>
-                        </tr>
-                    @endforeach
-                </tbody>
-            </table>
-        </div>
-    </div>
-    </div>
-
-
-    {{-- data siswa --}}
-    <div class="col-lg-6">
-        <div class="card shadow">
-            <div class="card-header bg-danger text-light">
-                <h6 class="m-0 font-weight-bold">Data siswa</h6>
             </div>
-            <div class="card-body">
-                <div class="card-shadow ">
+        </div> --}}
+
+        <div class="col-lg-12">
+            <div class="card shadow mb-">
+                <div class="card-header py-3 bg-danger">
+                    <a href="{{ route('jenis_kontak.create') }}" class="btn btn-success ">Tambah Kontak</a>
+                </div>
+                <div class="card-body">
                     <table class="table">
                         <thead>
                             <tr>
-                                {{-- <th scope="col">NISN</th> --}}
-                                <th scope="col">NAMA</th>
+                                <th scope="col">ID</th>
+                                <th scope="col">JENIS KONTAK</th>
                                 <th scope="col">ACTION</th>
                             </tr>
                         </thead>
-                        @foreach ($data as $item)
-                            <tr>
-                                {{-- <td>{{ $item->nisn }}</td> --}}
-                                <td>{{ $item->nama }}</td>
-                                <td class="text-center">
-                                    <a href="" class="btn-sm btn-info" onclick="show({{ $item->id }})"><i
-                                            class="fas fa-folder-open"></i></a>
-                                    <a href="
-                                {{-- {{ route('master_contact.tambah', $item->id) }} --}}
-                                "
-                                        class="btn-sm btn-success"><i class="fas fa-plus"></i></a>
-                                </td>
-                            </tr>
-                        @endforeach
+                        <tbody>
+                            @foreach ($jenis as $item)
+                                <tr>
+                                    <td>{{ $item->id }}</td>
+                                    <td>{{ $item->jenis_kontak }}</td>
+                                    <td>
+                                        {{-- edit --}}
+                                        <a href="{{ route('jenis_kontak.edit', $item->id) }}"
+                                            class="btn btn-warning btn-circle btn-sm"><i class="fas fa-edit"></i></a>
+                                        {{-- hapus --}}
+                                        <a href="{{ route('jenis_kontak.hapus', $item->id) }}"
+                                            class="btn btn-danger btn-circle btn-sm"><i class="fas fa-trash"></i></a>
+                                    </td>
+                                </tr>
+                            @endforeach
+                        </tbody>
                     </table>
                 </div>
             </div>
         </div>
-    </div>
 
-    {{-- kontak siswa --}}
-    <div class="col-lg-6">
-        <div class="card shadow">
-            <div class="card-header bg-danger text-light">
-                <h6 class="m-0 font-weight-bold "><i class=""> Kontak Siswa</i></h6>
-            </div>
-            <div id="project" class="card-body">
-                <h6 class="text-center">Pilih Siswa terlebih dahulu</h6>
+
+        {{-- data siswa --}}
+        <div class="col-lg-6">
+            <div class="card shadow">
+                <div class="card-header bg-danger text-light">
+                    <h6 class="m-0 font-weight-bold">Data siswa</h6>
+                </div>
+                <div class="card-body">
+                    <div class="card-shadow ">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    {{-- <th scope="col">NISN</th> --}}
+                                    <th scope="col">NAMA</th>
+                                    <th scope="col">ACTION</th>
+                                </tr>
+                            </thead>
+                            @foreach ($datas as $item)
+                                <tr>
+                                    {{-- <td>{{ $item->nisn }}</td> --}}
+                                    <td>{{ $item->nama }}</td>
+                                    <td class="text-center">
+
+                                        <a class="btn-sm btn-info" onclick="show({{$item->id}})"><i
+                                                class="fas fa-folder-open"></i></a>
+
+                                        <a href="{{ route('master_contact.tambah', $item->id) }}"
+                                            class="btn-sm btn-success"><i class="fas fa-plus"></i></a>
+                                    </td>
+                                </tr>
+                            @endforeach
+                        </table>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
+
+        {{-- kontak siswa --}}
+        <div class="col-lg-6">
+            <div class="card shadow">
+                <div class="card-header bg-danger text-light">
+                    <h6 class="m-0 font-weight-bold "><i class=""> Kontak Siswa</i></h6>
+                </div>
+                <div id="kontak" class="card-body">
+                    <h6 class="text-center">Pilih Siswa terlebih dahulu</h6>
+                </div>
+            </div>
+        </div>
 
     </div>
 
     <script>
         function show(id) {
             $.get('master_contact/' + id, function(data) {
-                $('#contact').html(data);
+                $('#kontak').html(data);
             })
         }
     </script>

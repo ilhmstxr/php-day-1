@@ -55,51 +55,53 @@ use App\Http\Controllers\JContactController;
 
 // 
 // route::middleware('guest')->group(function () {
-    Route::get('login', [Logincontroller::class, 'index'])->name('login')->middleware('guest');
-    Route::post('login', [Logincontroller::class, 'authenticate']);
+Route::get('login', [Logincontroller::class, 'index'])->name('login')->middleware('guest');
+Route::post('login', [Logincontroller::class, 'authenticate']);
 
-    Route::get('/', function () {
-        return view('home');
-    });
+Route::get('/', function () {
+    return view('home');
+});
 
-    Route::get('/admin', function () {
-        return view('master.admin');
-    });
+Route::get('/admin', function () {
+    return view('master.admin');
+});
 
-    Route::get('/about', function () {
-        return view('aboutme');
-    });
+Route::get('/about', function () {
+    return view('aboutme');
+});
 
-    Route::get('/contact', function () {
-        return view('contact');
-    });
+Route::get('/contact', function () {
+    return view('contact');
+});
 
-    Route::get('/project', function () {
-        return view('project');
-    });
+Route::get('/project', function () {
+    return view('project');
+});
 
-    route::get('/master_contact', function () {
-        return view('master_contact');
-    });
+route::get('/master_contact', function () {
+    return view('master_contact');
+});
 // });
 
 
 // 
 // route::middleware(['auth', 'siswa'])->group(function () {
-    Route::resource('dashboard', DashboardController::class);
-    Route::resource('master_siswa', SiswaController::class);
-    Route::resource('master_project', ProjectController::class);
-    Route::resource('master_contact', ContactController::class);
-    Route::resource('jenis_kontak', JContactController::class);
-    // route::resource('master_contact' )
+Route::resource('dashboard', DashboardController::class);
+Route::resource('master_siswa', SiswaController::class);
+Route::resource('master_project', ProjectController::class);
+Route::resource('master_contact', ContactController::class);
+Route::resource('jenis_kontak', JContactController::class);
+// route::resource('master_contact' )
 
-    Route::get('master_siswa/{id_siswa}/hapus', [SiswaController::class, 'hapus'])->name('master_siswa.hapus');
-    
-    Route::get('master_project/create/{id_siswa}', [ProjectController::class, 'tambah'])->name('master_project.tambah');
-    Route::get('master_project/{id_siswa}/hapus', [ProjectController::class, 'hapus'])->name('master_project.hapus');
-    // // Route::get('jenis_kontak/{id_siswa}/hapus', [JContactController::class, 'hapus'])->name('Jcontact.hapus');
-    // Route::get('jenis_kontak/hapus', [JContactController::class, 'hapus'])->name('jenis_kontak.hapus');
-    // // Route::get('jenis_kontak/create/{id_siswa}', [JContactController::class, 'tambah'])->name('jenis_kontak.tambah');
+Route::get('master_siswa/{id_siswa}/hapus', [SiswaController::class, 'hapus'])->name('master_siswa.hapus');
 
-    Route::post('logout', [Logincontroller::class, 'logout']);
+Route::get('master_project/create/{id_siswa}', [ProjectController::class, 'tambah'])->name('master_project.tambah');
+Route::get('master_project/{id_siswa}/hapus', [ProjectController::class, 'hapus'])->name('master_project.hapus');
+// // Route::get('jenis_kontak/{id_siswa}/hapus', [JContactController::class, 'hapus'])->name('Jcontact.hapus');
+// Route::get('jenis_kontak/hapus', [JContactController::class, 'hapus'])->name('jenis_kontak.hapus');
+Route::get('master_contact/create/{id_siswa}', [ContactController::class, 'tambah'])->name('master_contact.tambah');
+
+Route::get('jenis_kontak/{id_siswa}/hapus', [JContactController::class, 'hapus'])->name('jenis_kontak.hapus');
+
+Route::post('logout', [Logincontroller::class, 'logout']);
 // });

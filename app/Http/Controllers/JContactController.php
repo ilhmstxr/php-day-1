@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use App\Models\jenis_kontak;
+
 use App\Models\siswa;
 
 class JContactController extends Controller
@@ -44,18 +45,28 @@ class JContactController extends Controller
      */
     public function store(Request $request)
     {
-        //
-        $msg = [
+        // eror
+        $message = [
             'required' => ':attribute harus diisi gaess',
             'min' => ':attribute minimal :min karakter ya coy',
-            'max' => ': attribute maksimal :max karakter gaess'
+            'max' => ': attribute maksimal :max karakter gaess',
         ];
 
-        $this -> validate($request, [
-            'jenis_kontak' => 'required'
-        ], $msg);
+        // validasi
+        $this->validate($request, [
+            'jenis_kontak' => 'required|min:1|max:10',
+        ], $message);
 
-        Session::flash('jkontak_store', 'Jenis Kontak tersimpan !!!');
+        //insert data
+        // jenis_kontak::create([
+        //     'jenis_kontak' => $request->jenis_kontak,
+        // ]);
+
+        $jkontak = new jenis_kontak();
+        $jkontak ->jenis_kontak = $request->input('jenis_kontak');
+        $jkontak->save();
+        
+        Session::flash('success', 'data anda tersimpan !!!');
         return redirect('/master_contact');
     }
 
@@ -85,7 +96,7 @@ class JContactController extends Controller
         //
         $jkontak = jenis_kontak::find($id);
         // $kontaks = $siswa->kontak()->get();
-        return view('view_c.s_siswa', compact('jkontak'));
+        return view('view_c.edit_jkontak', compact('jkontak'));
     }
 
     /**

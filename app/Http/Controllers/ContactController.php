@@ -19,9 +19,14 @@ class ContactController extends Controller
         // $data = jenis_kontak::all();
         // return view ('mastercontact' , compact('data'));
 
-        $data = siswa::paginate(5);
-        $jenis_kontak = jenis_kontak::paginate(5);
-        return view('mastercontact', compact('data' , 'jenis_kontak'));
+        $kontak=kontak::all();
+        $datas=siswa::all();
+        $datasp=siswa::paginate(5);
+        $jenis=jenis_kontak::all();
+        // $jenisp=jenis_kontak::
+        // $data = siswa::paginate(5);
+        // $jenis_kontak = jenis_kontak::paginate(5);
+        return view('mastercontact', compact('kontak','datas','datasp','jenis'));
     }
 
     /**
@@ -38,9 +43,11 @@ class ContactController extends Controller
     public function tambah($id)
     {
         $siswa = siswa::find($id);
-        $jenis_kontak = jenis_kontak::all();
-        return view('view_c.c_contact   ', compact('siswa', 'jenis_kontak'));
+        $jenis = jenis_kontak::all();
+        // $jenis_kontak = jenis_kontak::all();
+        return view('view_c.c_kontak', compact('siswa', 'jenis'));
     }
+    
     /**
      * Store a newly created resource in storage.
      *
@@ -63,12 +70,12 @@ class ContactController extends Controller
 
         kontak::create([
             'siswa_id' => $request->siswa_id,
-            'jenis_kontak_id' => $request->jenis_kontak,
+            'jenis_kontak_id' => $request->jenis_kontak_id,
             'deskripsi' => $request->deskripsi,
         ]);
 
         Session::flash('benar', 'Selamat!!! Project Anda Berhasil Ditambahkan');
-        return redirect('/mastercontact');
+        return redirect('/master_contact');
     }
 
     /**
@@ -80,7 +87,7 @@ class ContactController extends Controller
     public function show($id)
     {
         $kontak = siswa::find($id)->kontak()->get();
-        return view('view_c.s_contact', compact('kontak'));
+        return view('view_c.s_kontak', compact('kontak'));
     }
 
     /**
