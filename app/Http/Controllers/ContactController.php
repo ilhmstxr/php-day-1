@@ -60,8 +60,6 @@ class ContactController extends Controller
             'required' => ':attribute harus diisi gaess',
             'min' => ':attribute minimal :min karakter ya coy',
             'max' => 'attribute makasimal :max karakter gaess',
-            'numeric' => ':attribute kudu diisi angka cak!!',
-            'mimes' => 'file :attribute harus bertipe :mimes'
         ];
         
         $this->validate($request, [

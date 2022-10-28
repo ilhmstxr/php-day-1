@@ -53,6 +53,7 @@
                         <a class="nav-link active" href="/about">About</a>
                         <a class="nav-link active" href="/project">Projects</a>
                         <a class="nav-link active" href="/contact">Contact</a>
+                        <a class="nav-link active" href="/login">Login</a>
                     </div>
                 </div>
             </div>

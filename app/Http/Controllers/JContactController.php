@@ -54,19 +54,18 @@ class JContactController extends Controller
 
         // validasi
         $this->validate($request, [
-            'jenis_kontak' => 'required|min:1|max:10',
+            // 'jenis_kontak' => 'required|min:1|max:10',
         ], $message);
 
         //insert data
-        // jenis_kontak::create([
-        //     'jenis_kontak' => $request->jenis_kontak,
-        // ]);
-
-        $jkontak = new jenis_kontak();
-        $jkontak ->jenis_kontak = $request->input('jenis_kontak');
-        $jkontak->save();
+        jenis_kontak::create([
+            'jenis_kontak' => $request->jenis_kontak
+        ]);
+        // $jkontak = new jenis_kontak();
+        // $jkontak ->jenis_kontak = $request->input('jenis_kontak');
+        // $jkontak->save();
         
-        Session::flash('success', 'data anda tersimpan !!!');
+        // Session::flash('success', 'data anda tersimpan !!!');
         return redirect('/master_contact');
     }
 

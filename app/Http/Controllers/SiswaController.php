@@ -74,6 +74,7 @@ class SiswaController extends Controller
 
         //rename
         $nama_file = time() . "_" . $file->getClientOriginalName();
+        
         // proses upload
         $tujuan_upload = './template/img';
         $file->move($tujuan_upload, $nama_file);

@@ -14,7 +14,7 @@
 
         protected $table = "jenis_kontak";
 
-        public function kontak()
+        public function siswa()
         {
             return $this->belongsToMany('App\Models\kontak', 'id');
         }
