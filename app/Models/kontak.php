@@ -22,7 +22,7 @@ class kontak extends Model
     }
 
     public function kontak(){
-        return $this -> belongsTo('App\Models\jenis_kontak', 'jenis_kontak_id');
+        return $this -> belongsTo('App\Models\jenis_kontak', 'siswa_id');
     }
 
     // public function jenis_kontak (){

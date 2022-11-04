@@ -1,4 +1,4 @@
-{{-- @section('master.title', 'Master Siswa') --}}
+    {{-- @section('master.title', 'Master Siswa') --}}
 {{-- @extends('home') --}}
 @extends('master.admin')
 @section('title', 'Master Siswa')

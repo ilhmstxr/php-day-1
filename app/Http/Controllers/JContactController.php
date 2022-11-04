@@ -108,6 +108,7 @@ class JContactController extends Controller
     {
         //
         $jkontak = jenis_kontak::find($id);
+        // $siswa = siswa::find($id);
         // $kontaks = $siswa->kontak()->get();
         return view('view_c.edit_jkontak', compact('jkontak'));
     }
