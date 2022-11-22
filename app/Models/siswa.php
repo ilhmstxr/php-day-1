@@ -15,7 +15,7 @@ class siswa extends Model
         'alamat',
         'jk',
         'about',
-        'foto'
+        'foto',
         
     ];
     protected $table = 'siswa';
