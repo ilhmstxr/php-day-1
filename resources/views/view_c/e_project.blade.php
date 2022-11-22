@@ -1,6 +1,6 @@
 @extends('master.admin')
 @section('title', 'Edit Project')
-@section('content-title', 'Edit Project')
+@section('content-title', 'Edit Project '. $siswa->nama)
 @section('content')
 
     <div class="row">

@@ -60,7 +60,7 @@
                         <tbody>
                             @foreach ($jenis as $item)
                                 <tr>
-                                    <td>{{ $item->id }}</td>
+                                    <td>{{ $loop->iteration }}</td>
                                     <td>{{ $item->jenis_kontak }}</td>
                                     <td>
                                         {{-- edit --}}

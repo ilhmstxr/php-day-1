@@ -125,8 +125,6 @@ class JContactController extends Controller
         //
         $msg = [
             'required' => ':attribute harus diisi gaess',
-            'min' => ':attribute minimal :min karakter ya coy',
-            'max' => ': attribute maksimal :max karakter gaess'
         ];
 
         $this->validate($request, [
