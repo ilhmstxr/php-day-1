@@ -3,14 +3,16 @@
 @section('content-title', 'Edit jenis Kontak ')
 @section('content')
 
- <div class="card shadow mb-4">
+    <div class="card shadow mb-4">
         <div class="card-body">
-            <form action="{{ route('master_project.store') }}" method="POST">
+            <form action="{{ route('jenis_kontak.update', $jkontak->id) }}" method="POST">
                 @csrf
+                @method('put')
                 <div class="form-group">
-                    
+
                     <label for="nama">JENIS KONTAK</label>
-                    <input type="text" class="form-control" id="jenis_kontak" name="jenis_kontak" value="{{$jkontak->jenis_kontak }}">
+                    <input type="text" class="form-control" id="jenis_kontak" name="jenis_kontak"
+                        value="{{ $jkontak->jenis_kontak }}">
                 </div>
 
                 <div class="form-group">

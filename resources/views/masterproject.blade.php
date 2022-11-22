@@ -28,6 +28,7 @@
         </div>
     @endif
 
+    
     <div class="row">
 
         {{-- Data Siswa --}}

@@ -63,7 +63,7 @@ class ContactController extends Controller
         ];
         
         $this->validate($request, [
-
+            
         ], $message);
 
         kontak::create([
@@ -98,7 +98,8 @@ class ContactController extends Controller
     {
         $kontak = kontak::find($id);
         $siswa = siswa::find($id);
-        return view('EditContact', compact('kontak', 'siswa'));
+        $jenis = jenis_kontak::all();
+        return view('view_c.e_kontak', compact('kontak', 'siswa', 'jenis'));
     }
 
     /**
@@ -146,7 +147,7 @@ class ContactController extends Controller
     {
         $kontak = kontak::find($id)->delete();
         Session::flash('danger', 'Data Berhasil Dihapus');
-        return redirect('/mastercontact');
+        return redirect('/master_contact');
     }
 
 }

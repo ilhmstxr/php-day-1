@@ -51,7 +51,7 @@
                         <div class="form-group">
                             <label for="foto">Foto Siswa</label>
                             <input type="file" class="form-control-file" id="foto" name="foto"
-                                value="{{ old('foto') }}">
+                                value="fa fa-upload{{ old('foto') }}" aria-label="fa fa-upload">
                         </div>
 
                         <div class="form-group">

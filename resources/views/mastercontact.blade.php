@@ -12,7 +12,7 @@
                 <div class="card shadow mb-4">
                     <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal"
                         data-whatever> Tambah Jenis Kontak</button>
-                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"ed
                         aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog" role="document">
                             <div class="modal-content">
@@ -60,7 +60,7 @@
                         <tbody>
                             @foreach ($jenis as $item)
                                 <tr>
-                                    <td>{{ $item->id }}</td>
+                                    <td>{{ $loop->iteration }}</td>
                                     <td>{{ $item->jenis_kontak }}</td>
                                     <td>
                                         {{-- edit --}}
@@ -97,11 +97,10 @@
                             </thead>
                             @foreach ($datas as $item)
                                 <tr>
-                                    {{-- <td>{{ $item->nisn }}</td> --}}
                                     <td>{{ $item->nama }}</td>
                                     <td class="text-center">
 
-                                        <a class="btn-sm btn-info" onclick="show({{$item->id}})"><i
+                                        <a class="btn-sm btn-info" onclick="show({{ $item->id }})"><i
                                                 class="fas fa-folder-open"></i></a>
 
                                         <a href="{{ route('master_contact.tambah', $item->id) }}"
