@@ -10,13 +10,13 @@
             {{-- {{ $item->pivot->deskripsi }} --}}
             <div class="card-body">
                 <h1>{{ $item->pivot->deskripsi }}</h1>
-            </div>
+            </div>  
 
             <div class="card-footer d-flex justify-content-end">
-                 <a href="{{ route('master_contact.edit', $item->id) }}" class="btn btn-sm btn-warning "><i 
+                 {{-- <a href="{{ route('master_contact.edit', $item->id) }}" class="btn btn-sm btn-warning "><i 
                         class="fas fa-edit"></i></a> 
                  <a href="{{ route('master_contact.hapus', $item->id) }}" class="btn btn-sm btn-danger "><i
-                        class="fas fa-trash"></i></a> 
+                        class="fas fa-trash"></i></a>  --}}
             </div>
         </div>
     @endforeach

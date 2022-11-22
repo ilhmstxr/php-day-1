@@ -55,7 +55,7 @@ use App\Http\Controllers\JContactController;
 
 // 
 // route::middleware('guest')->group(function () {
-Route::get('login', [Logincontroller::class, 'index'])->name('login')->middleware('guest');
+Route::get('login', [Logincontroller::class, 'index'])->name('login');
 Route::post('login', [Logincontroller::class, 'authenticate']);
 
 Route::get('/', function () {
