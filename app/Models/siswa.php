@@ -14,13 +14,15 @@ class siswa extends Model
         'id_kelas',
         'alamat',
         'jk',
+        'about',
+        'foto',
         
     ];
     protected $table = 'siswa';
 
     // public function kontak()
-    // {
-    //     return $this->hasMany('App\models\siswa', 'id');
+    // {    
+    //     return $this->hasMany('App\models\jenis_kontak_siswa')->withpivot('App');
     // }
 
     public function kelas(){
@@ -32,9 +34,9 @@ class siswa extends Model
     //     return $this->hasMany('App\Models\project', 'id_siswa');
     // }
 
-    // public function kontak(){
-    //     return $this->belongsToMany('App\Models\jenis_kontak')-> withPivot('id' ,'deskripsi');
-    // }
+    public function kontak(){
+        return $this->belongsToMany('App\Models\jenis_kontak')-> withPivot('id' ,'deskripsi');
+    }
 
     
 }

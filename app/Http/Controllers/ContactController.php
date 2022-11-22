@@ -9,6 +9,11 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 class ContactController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+        $this->middleware('admin');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -23,6 +28,7 @@ class ContactController extends Controller
         $datas=siswa::all();
         $datasp=siswa::paginate(5);
         $jenis=jenis_kontak::all();
+        // return $datas;
         // $jenisp=jenis_kontak::
         // $data = siswa::paginate(5);
         // $jenis_kontak = jenis_kontak::paginate(5);
@@ -85,6 +91,7 @@ class ContactController extends Controller
     public function show($id)
     {
         $kontak = siswa::find($id)->kontak()->get();
+        return $kontak;
         return view('view_c.s_kontak', compact('kontak'));
     }
 

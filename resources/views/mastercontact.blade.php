@@ -111,7 +111,7 @@
                         </table>
                     </div>
                 </div>
-            </div>
+            </div> 
         </div>
 
         {{-- kontak siswa --}}
