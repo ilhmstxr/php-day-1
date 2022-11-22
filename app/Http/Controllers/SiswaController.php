@@ -9,11 +9,10 @@ use Illuminate\Http\Request;
 
 class SiswaController extends Controller
 {
-//     public function __construct(){
-//         $this->middleware(['auth','admin']);
-//         $this->middleware(['auth', 'walas'])->only(['index','show']);
-//         $this->middleware(['auth','siswa']);
-//     }
+public function __construct()
+    {
+        $this->middleware('admin');
+    }
     
     /**
      * Display a listing of the resource.
