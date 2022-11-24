@@ -101,7 +101,7 @@
                                     <td class="text-center">
 
                                         <a class="btn-sm btn-info" onclick="show({{ $item->id }})"><i
-                                                class="fas fa-folder-open"></i></a>
+                                                class="fas fa-folder-open" aria-hidden="true"></i></a>
 
                                         <a href="{{ route('master_contact.tambah', $item->id) }}"
                                             class="btn-sm btn-success"><i class="fas fa-plus"></i></a>
@@ -130,8 +130,9 @@
 
     <script>
         function show(id) {
-            $.get('master_contact/' + id, function(data) {
+            $.get('/master_contact/' + id, function(data) {
                 $('#kontak').html(data);
+                console.log(data)
             })
         }
     </script>

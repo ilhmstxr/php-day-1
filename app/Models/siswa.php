@@ -11,11 +11,10 @@ class siswa extends Model
     protected $fillable = [
         'nisn',
         'nama',
-        'id_kelas',
         'alamat',
         'jk',
         'about',
-        'foto',
+        'foto'
         
     ];
     protected $table = 'siswa';
@@ -25,17 +24,18 @@ class siswa extends Model
     //     return $this->hasMany('App\models\jenis_kontak_siswa')->withpivot('App');
     // }
 
-    public function kelas(){
-        return $this->belongsTo('App\models\kelas', 'id');
-    }
-
-
-    // public function project(){
-    //     return $this->hasMany('App\Models\project', 'id_siswa');
+    // public function kelas(){
+    //     return $this->belongsTo('App\models\kelas', 'id');
     // }
 
+
+    
     public function kontak(){
-        return $this->belongsToMany('App\Models\jenis_kontak')-> withPivot('id' ,'deskripsi');
+        return $this->belongsToMany('App\Models\jenis_kontak')->withPivot('deskripsi','id');
+    }
+
+    public function project(){
+        return $this->hasMany('App\Models\project', 'id_siswa');
     }
 
     

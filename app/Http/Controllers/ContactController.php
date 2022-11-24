@@ -91,7 +91,7 @@ class ContactController extends Controller
     public function show($id)
     {
         $kontak = siswa::find($id)->kontak()->get();
-        return $kontak;
+        // return $kontak;
         return view('view_c.s_kontak', compact('kontak'));
     }
 
