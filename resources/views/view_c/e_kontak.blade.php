@@ -1,6 +1,6 @@
 @extends('master.admin')
 @section('title', 'Edit Contact')
-@section('content-title', 'Edit Kontak - ')
+@section('content-title', 'Edit Kontak - '. $siswa->nama )
 @section('content')
 
     <div class="card shadow mb-4">
@@ -13,7 +13,7 @@
                     <input type="hidden" name="siswa_id" value="{{ $kontak->id }}">
                     <label>Jenis kontak</label>
                     <select type="text" class="form-control" id="jenis_kontak_id" name="jenis_kontak_id">
-                        <option value="">Pilih</option>
+                        {{-- <option value="">Pilih</option> --}}
                         @foreach ($jenis as $item)
                             <option value="{{ $item->id }}">{{ $item->jenis_kontak }}</option>
                         @endforeach

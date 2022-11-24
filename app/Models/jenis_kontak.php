@@ -14,8 +14,12 @@
 
         protected $table = "jenis_kontak";
 
-        public function siswa()
-        {
+        // public function siswa()
+        // {
+        //     // return $this->belongsTo('App\Models\siswa', 'id');
+        // }
+
+        public function siswa(){
             return $this->belongsTo('App\Models\siswa', 'id');
         }
     }
