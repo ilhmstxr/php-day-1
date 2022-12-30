@@ -43,7 +43,7 @@
             </div>
         </div> --}}
 
-        <div class="col-lg-12">
+        <div class="col-lg-12 pb-5">
             <div class="card shadow mb-">
                 <div class="card-header py-3 bg-danger">
                     <a href="{{ route('jenis_kontak.create') }}" class="btn btn-success ">Tambah Kontak</a>
@@ -111,7 +111,7 @@
                         </table>
                     </div>
                 </div>
-            </div> 
+            </div>
         </div>
 
         {{-- kontak siswa --}}

@@ -43,7 +43,7 @@
                             <tr>
                                 <th scope="col">NISN</th>
                                 <th scope="col">NAMA</th>
-                                <th scope="col"">ACTION</th>
+                                <th scope="col">ACTION</th>
                             </tr>
                         </thead>
                         @foreach ($data as $item)
@@ -59,9 +59,9 @@
                             </tr>
                         @endforeach
                     </table>
-                    <div class="card-footer d-flex justify-content-end">
+                    {{-- <div class="card-footer d-flex justify-content-end">
                         {{ $data->links() }}
-                    </div>
+                    </div> --}}
                 </div>
             </div>
         </div>
